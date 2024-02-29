@@ -12,4 +12,14 @@ class FormController extends Controller {
             "name" => "Fanidiya Tasya"
         ]);
     }
+
+    public function proses(Request $request) {
+        $nama = $request->nama;
+        $nim = $request->nim;
+        $prodi = $request->prodi;
+        
+        return "Nama : " . $nama . "\n" . 
+        "NIM : " . $nim . "\n" . 
+        "Program Studi : " . $prodi;
+    }
 }

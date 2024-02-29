@@ -46,6 +46,7 @@
 			</div>
 		</div>
 	</div>
+	
     @include('components.navbar')
     @include('components.sidebar')
     <div>

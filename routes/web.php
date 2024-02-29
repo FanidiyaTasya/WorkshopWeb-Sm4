@@ -31,3 +31,4 @@ Route::get('/coba', function () {
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/form', [FormController::class, 'index']);
+Route::post('/proses', [FormController::class, 'proses']);
