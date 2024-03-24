@@ -18,22 +18,27 @@
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label">Nama</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" type="text" name="nama">
+								<input class="form-control" type="text" name="nama" autofocus>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">NIM</label>
+							<label class="col-sm-12 col-md-2 col-form-label">Alamat</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" type="text" name="nim">
+								<input class="form-control" type="text" name="alamat">
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label">Program Studi</label>
+							<label class="col-sm-12 col-md-2 col-form-label">Tempat Tanggal Lahir</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" type="text" name="prodi">
+								<input class="form-control" type="text" name="ttl">
 							</div>
 						</div>
-
+						<div class="form-group row">
+							<label class="col-sm-12 col-md-2 col-form-label">Status</label>
+							<div class="col-sm-12 col-md-10">
+								<input class="form-control" type="text" name="status">
+							</div>
+						</div>
 						<input class="btn btn-primary" type="submit" value="Simpan">
 					</form>
 				</div>

@@ -9,9 +9,9 @@
 
 <nav>
     <ul>
-        <li><a href="/dash">Dashboard</a></li>
-        <li><a href="/profile">Profile</a></li>
-        <li><a href="/coba">Test</a></li>
+        <li><a href="/satu">Dashboard</a></li>
+        <li><a href="/dua">Profile</a></li>
+        <li><a href="/tiga">Test</a></li>
     </ul>
 </nav>
 
