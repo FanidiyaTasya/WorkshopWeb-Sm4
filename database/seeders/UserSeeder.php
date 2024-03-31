@@ -12,7 +12,7 @@ class UserSeeder extends Seeder
      * Run the database seeds.
      */
     public function run(): void {
-        User::create([
+        User::create([ // dgn model
             'name' => 'Fanidiya Tasya',
             'username' => 'tasy',
             'email' => 'tasya@gmail.com',
