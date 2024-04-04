@@ -9,13 +9,18 @@
         <div class="sidebar-menu">
             <ul id="accordion-menu">
                 <li>
-                    <a href="/" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-chat3"></span><span class="mtext">Home</span>
+                    <a href="/home" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="/form" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-chat3"></span><span class="mtext">Form</span>
+                        <span class="micon dw dw-edit2"></span><span class="mtext">Form</span>
+                    </a>
+                </li> --}}
+                <li>
+                    <a href="/mahasiswa" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-library"></span><span class="mtext">Data Mahasiswa</span>
                     </a>
                 </li>
             </ul>

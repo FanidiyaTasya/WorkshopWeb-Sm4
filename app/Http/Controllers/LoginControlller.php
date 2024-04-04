@@ -9,11 +9,7 @@ use Illuminate\Support\Facades\Session;
 class LoginControlller extends Controller {
 
     public function index() {
-        if (Auth::check()) {
-            return redirect('home');
-        } else {
-            return view('login');
-        }
+        return view('login');
     }
 
     public function actionLogin(Request $request) {
@@ -32,35 +28,6 @@ class LoginControlller extends Controller {
 
     public function logout() {
         Auth::logout();
-        return redirect('/login');  
+        return redirect('/');  
     }
-
-    // public function coba() {
-    //     if (Auth::check()) {
-    //         return redirect('home');
-    //     } else {
-    //         return view('profile');
-    //     }
-    // }
-    
-    // public function cobalogin(Request $request) {
-    //     $this->validate($request, [
-    //         'username' => 'required|string', // validasi usernema, bisa mengisi email/username
-    //         'password' => 'required|string',
-    //     ]);
-    //     // cek inputan jika formatny email, lakukan proses authentication dgn email, selain itu dgn username 
-    //     $loginType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-
-    //     // tampung info login, kolom type pertama bersifat dinamis, berdasarkan value pengecekan diatas
-    //     $login = [
-    //         $loginType => $request->username,
-    //         'password' => $request->password
-    //     ];
-
-    //     if (auth()->attempt($login)) {
-    //         return redirect()->route('home');
-    //     }
-    //     return redirect()->route('login')->with(['error' => 'Email/Password Salah!']);
-    //     // routenya hrs ada name diakhir route('login') -> Route::get('/login', [LoginControlller::class, 'index'])->name('login');
-    // }
 }
