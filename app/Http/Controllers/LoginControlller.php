@@ -9,11 +9,12 @@ use Illuminate\Support\Facades\Session;
 class LoginControlller extends Controller {
 
     public function index() {
-        if (Auth::check()) {
-            return redirect('home');
-        } else {
-            return view('login');
-        }
+        return view('login');
+        // if (Auth::check()) {
+        //     return redirect('home');
+        // } else {
+        //     return view('login');
+        // }
     }
 
     public function actionLogin(Request $request) {
@@ -32,16 +33,8 @@ class LoginControlller extends Controller {
 
     public function logout() {
         Auth::logout();
-        return redirect('/login');  
+        return redirect('/');  
     }
-
-    // public function coba() {
-    //     if (Auth::check()) {
-    //         return redirect('home');
-    //     } else {
-    //         return view('profile');
-    //     }
-    // }
     
     // public function cobalogin(Request $request) {
     //     $this->validate($request, [

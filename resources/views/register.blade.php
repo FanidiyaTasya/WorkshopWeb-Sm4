@@ -54,29 +54,46 @@
 				</div>
 				<div class="col-md-6 col-lg-5">
 					<div class="bg-white box-shadow border-radius-10" style="padding: 30px;">
-						<form>
+						<div class="register-title mb-30">
+							<h2 class="text-center text-primary">Register</h2>
+						</div>
+						<div>
+							@if (@session('error'))
+								<div class="alert alert-danger">
+									<strong>Oopps!</strong> {{ session('error') }}
+								</div>
+							@endif
+						</div>
+						<form action="/register/store" method="POST">
+							@csrf
 							<div class="form-group row">
-								<label class="col-sm-4 col-form-label">Email Address*</label>
+								<label class="col-sm-4 col-form-label" for="name">Name*</label>
 								<div class="col-sm-8">
-									<input type="email" class="form-control">
+									<input type="text" class="form-control" name="name" id="name">
 								</div>
 							</div>
 							<div class="form-group row">
-								<label class="col-sm-4 col-form-label">Username*</label>
+								<label class="col-sm-4 col-form-label" for="username">Username*</label>
 								<div class="col-sm-8">
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" name="username" id="username">
 								</div>
 							</div>
 							<div class="form-group row">
-								<label class="col-sm-4 col-form-label">Password*</label>
+								<label class="col-sm-4 col-form-label" for="email">Email Address*</label>
 								<div class="col-sm-8">
-									<input type="password" class="form-control">
+									<input type="email" class="form-control" name="email" id="email">
 								</div>
 							</div>
 							<div class="form-group row">
-								<label class="col-sm-4 col-form-label">Confirm Password*</label>
+								<label class="col-sm-4 col-form-label" for="password">Password*</label>
 								<div class="col-sm-8">
-									<input type="password" class="form-control">
+									<input type="password" class="form-control" name="password" id="password">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-4 col-form-label" for="confirm">Confirm Password*</label>
+								<div class="col-sm-8">
+									<input type="password" class="form-control" name="password_confirmation" id="confirm">
 								</div>
 							</div>
 							<div class="form-group row mt-5">

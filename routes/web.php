@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\AngkaController;
-use App\Http\Controllers\FormController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginControlller;
+use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
@@ -18,25 +20,30 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/satu', [AngkaController::class, 'satu']);
-Route::get('/dua', [AngkaController::class, 'dua']);
-Route::get('/tiga', [AngkaController::class, 'tiga']);
-Route::get('/perkenalkan/{nama}', [AngkaController::class, 'getNama']);
-
-// Route::get('/login', [LoginControlller::class, 'coba'])->name('login');
-// Route::post('/login', [LoginControlller::class, 'cobalogin']);
-// Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-Route::get('/login', [LoginControlller::class, 'index'])->name('login'); // u/ middleware
+Route::get('/', [LoginControlller::class, 'index']);
 Route::post('/login', [LoginControlller::class, 'actionlogin']);
-Route::get('/register', function () {
-    return view('register');
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register/store', [RegisterController::class, 'actionRegister']);
+
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/home', [HomeController::class, 'index']);
+
+    Route::get('/mahasiswa', [MahasiswaController::class, 'read'])->name('mahasiswa.read');
+    Route::get('/form', [MahasiswaController::class, 'formCreate']);
+    Route::post('/add', [MahasiswaController::class, 'create'])->name('mahasiswa.create');
+    Route::get('/mahasiswa/edit/{id}', [MahasiswaController::class, 'formEdit'])->name('mahasiswa.edit');
+    Route::put('/mahasiswa/update', [MahasiswaController::class, 'update'])->name('mahasiswa.update');
+    Route::get('/mahasiswa/delete/{id}', [MahasiswaController::class, 'delete'])->name('mahasiswa.delete');
 });
-Route::get('/home', [HomeController::class, 'index'])->middleware('auth');;
-Route::get('/form', [FormController::class, 'index']);
-Route::post('/proses', [FormController::class, 'proses']);
+
+Route::get('location', [LocationController::class, 'index']);
+Route::get('location/kabupaten/{id}', [LocationController::class, 'getKabupaten']);
+Route::get('location/kecamatan/{id}', [LocationController::class, 'getKecamatan']);
+Route::get('location/kelurahan/{id}', [LocationController::class, 'getKelurahan']);
+
 Route::get('/logout', [LoginControlller::class, 'logout'])->name('logout');
