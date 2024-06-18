@@ -10,11 +10,14 @@ class LoginControlller extends Controller {
 
     public function index() {
         return view('login');
+<<<<<<< HEAD
         // if (Auth::check()) {
         //     return redirect('home');
         // } else {
         //     return view('login');
         // }
+=======
+>>>>>>> 4b63ae2609715bf69c75743af86f9d0c56ac2913
     }
 
     public function actionLogin(Request $request) {
@@ -35,6 +38,7 @@ class LoginControlller extends Controller {
         Auth::logout();
         return redirect('/');  
     }
+<<<<<<< HEAD
     
     // public function cobalogin(Request $request) {
     //     $this->validate($request, [
@@ -56,4 +60,6 @@ class LoginControlller extends Controller {
     //     return redirect()->route('login')->with(['error' => 'Email/Password Salah!']);
     //     // routenya hrs ada name diakhir route('login') -> Route::get('/login', [LoginControlller::class, 'index'])->name('login');
     // }
+=======
+>>>>>>> 4b63ae2609715bf69c75743af86f9d0c56ac2913
 }

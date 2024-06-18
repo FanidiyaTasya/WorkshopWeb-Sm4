@@ -36,7 +36,10 @@
 <body>
     {{-- <div class="pre-loader">
 		<div class="pre-loader-box">
+<<<<<<< HEAD
 			<div class="loader-logo"><img src="vendors/images/deskapp-logo.svg" alt=""></div>
+=======
+>>>>>>> 4b63ae2609715bf69c75743af86f9d0c56ac2913
 			<div class='loader-progress' id="progress_div">
 				<div class='bar' id='bar1'></div>
 			</div>
@@ -45,14 +48,20 @@
 				Loading...
 			</div>
 		</div>
+<<<<<<< HEAD
 	</div> --}}
 	
     @include('components.header')
     @include('components.sidebar')
+=======
+	</div>
+	@include('components.header')
+	@include('components.sidebar')
+
+>>>>>>> 4b63ae2609715bf69c75743af86f9d0c56ac2913
     <div>
         @yield('content')
     </div>
-    
     <!-- javascript -->
 	<script src="{{ asset('vendors/scripts/core.js') }}"></script>
 	<script src="{{ asset('vendors/scripts/script.min.js') }}"></script>

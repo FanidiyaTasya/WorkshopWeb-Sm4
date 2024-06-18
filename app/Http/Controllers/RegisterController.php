@@ -24,5 +24,9 @@ class RegisterController extends Controller {
 
         return redirect('login');
     }
+<<<<<<< HEAD
 
 }
+=======
+}
+>>>>>>> 4b63ae2609715bf69c75743af86f9d0c56ac2913
