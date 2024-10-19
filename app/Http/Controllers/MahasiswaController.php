@@ -12,20 +12,13 @@ class MahasiswaController extends Controller {
         $mahasiswa = Mahasiswa::all();
         return view('mahasiswa', compact('mahasiswa'), [
             "title" => "Data Mahasiswa",
-<<<<<<< HEAD
             "name" => "Fanidiya Tasya"
-=======
->>>>>>> 4b63ae2609715bf69c75743af86f9d0c56ac2913
         ]);
     }
 
     public function formCreate() {
         return view('create', [
             "title" => "Tambah Data Mahasiswa",
-<<<<<<< HEAD
-            "name" => "Fanidiya Tasya"
-=======
->>>>>>> 4b63ae2609715bf69c75743af86f9d0c56ac2913
         ]);
     }
 
