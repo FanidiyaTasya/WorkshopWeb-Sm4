@@ -13,9 +13,9 @@
 
 <label for="provinsi">Provinsi:</label>
 <select id="provinsi" class="provinsi" style="width: 200px;">
-    <option value="">Pilih Provinsi</option> @foreach($provinsi as $prov)
-        <option value="{{ $prov['id'] }}">{{ $prov['nama']
-}}</option>
+    <option value="">Pilih Provinsi</option> 
+    @foreach($provinsi as $prov)
+        <option value="{{ $prov['id'] }}">{{ $prov['nama']}}</option>
     @endforeach
 </select>
 
